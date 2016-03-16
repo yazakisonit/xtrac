@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>in.bench.resources</groupId>
+	<artifactId>XTRAC</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>XTRAC</name>
+	<description>XTRAC - Sample web service application to expose APIs</description>
+	<url>http://maven.apache.org</url>
+
+	<repositories>
+		<repository>
+			<id>jboss</id>
+			<url>http://repository.jboss.org/maven2</url>
+		</repository>
+	</repositories>
+
+	<properties>
+		<resteasy.version>3.0.16.Final</resteasy.version>
+		<resteasy.scope>compile</resteasy.scope> <!-- compile(Tomcat) -->
+		<compileSource>1.8</compileSource>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<finalName>XTRAC</finalName>
+	</build>
+
+	<dependencies>
+		<!-- RESTEasy JAX RS Implementation -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxrs</artifactId>
+			<version>${resteasy.version}</version>
+			<scope>${resteasy.scope}</scope>
+		</dependency>
+
+		<!-- Resteasy Servlet Container Initializer -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-servlet-initializer</artifactId>
+			<version>${resteasy.version}</version>
+			<scope>${resteasy.scope}</scope>
+		</dependency>
+
+		<!-- RESTEasy JAX RS Client -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-client</artifactId>
+			<version>${resteasy.version}</version>
+			<scope>${resteasy.scope}</scope>
+		</dependency>
+
+		<!-- H2 - in-memory driver -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.191</version>
+		</dependency>
+		
+		 <!-- MySql-Connector -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.31</version>
+        </dependency>
+	</dependencies>
+</project>

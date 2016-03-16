@@ -1,0 +1,22 @@
+
+-- XTRAC table creation script
+
+DROP TABLE IF EXISTS USER;
+CREATE TABLE USER (EMAIL_ID VARCHAR(255) PRIMARY KEY,
+   FIRST_NAME VARCHAR(255),
+   LAST_NAME  VARCHAR(255),
+   TELEPHONE_NO BIGINT
+);
+
+DROP TABLE IF EXISTS REGISTRATION;
+CREATE TABLE REGISTRATION( REG_ID SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT, 
+                                                              EMAIL_ID VARCHAR(255),
+                                                              APP_NAME VARCHAR(255),
+							      APP_DESC VARCHAR(255),
+                                                              APP_ID INT,
+                                                              APP_SECRET VARCHAR(255),
+                                                              PRIMARY KEY(REG_ID));
+
+
+ALTER TABLE REGISTRATION ADD FOREIGN KEY (EMAIL_ID) 
+REFERENCES USER(EMAIL_ID)
